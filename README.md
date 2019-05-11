@@ -1,2 +1,2 @@
-# LainBot-JS
-LainBot-Reborn but rewritten!
+# Arisubot
+Arisubot is a Discord bot written in node.js.
