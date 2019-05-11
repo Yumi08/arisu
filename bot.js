@@ -42,4 +42,14 @@ client.on('ready', () => {
     }
   });
 
+  client.on('message', message => {
+    if (message.content === `${config.prefix}code`) {
+      const embed = new RichEmbed()
+        .setTitle('Source Code')
+        .setColor(0xFF0000)
+        .setDescription('You can find the source code here \n https://github.com/TheSorton/Arisubot');
+      message.channel.send(embed);
+    }
+  });
+
   client.login(config.token);
