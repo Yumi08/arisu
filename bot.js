@@ -4,7 +4,7 @@ const config = require('./config.json');
 const {RichEmbed } = require('discord.js');
 var fs = require("fs");
 
-/* Category-based "extensions" */
+/* Category-based "plugins" */
 /* Music commands */
 eval(fs.readFileSync('plugin/music.js')+'');
 

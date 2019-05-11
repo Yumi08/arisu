@@ -1,3 +1,5 @@
+  /* Music Commands */
+  
   client.on('message', msg => {
     if (msg.content === `${config.prefix}radio`) {
       const voiceChannel = msg.member.voiceChannel;
