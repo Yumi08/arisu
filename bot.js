@@ -26,7 +26,7 @@ client.on('ready', () => {
   });
 
   client.on('message', message => {
-    if (message.content === `${config.prefix}embed`) {
+    if (message.content === `${config.prefix}help`) {
       const embed = new RichEmbed()
         .setTitle('Help')
         .setColor(0xFF0000)
