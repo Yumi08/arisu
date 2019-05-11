@@ -13,13 +13,6 @@ client.on('ready', () => {
 		msg.channel.send('Pong.');
     }
   });
-
-  client.on('message', msg => {
-      if (msg.content === `${config.prefix}code`) {
-          msg.channel.send('As requested: https://github.com/TheSorton/LainBot-JS');
-      }
-  });
-
   
   client.on('message', msg => {
     if (msg.content === `${config.prefix}radio`) {
