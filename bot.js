@@ -2,15 +2,16 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const config = require('./config.json');
 const {RichEmbed } = require('discord.js');
+const ytdl = require('ytdl-core');
 var fs = require("fs");
 
 /* Category-based "plugins" */
-/* Music commands */
-eval(fs.readFileSync('plugin/music.js')+'');
+eval(fs.readFileSync('plugin/sound.js')+'');
+
 
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
-    client.user.setActivity('%help')  
+    client.user.setActivity('%help');
   });
   
   client.on('message', msg => {
@@ -24,7 +25,7 @@ client.on('ready', () => {
       const embed = new RichEmbed()
         .setTitle('Help')
         .setColor(0xFF0000)
-        .setDescription('%radio -- Plays lainchan radio \n %leave -- Leaves voice channel \n More things will be added along the way so stay tuned! 😅');
+        .setDescription('**%help sounds** -- Sound commands\n **%code** -- Source code');
       message.channel.send(embed);
     }
   });
