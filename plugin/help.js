@@ -24,7 +24,7 @@ client.on('message', message => {
 client.on('message', message => {
     if (message.content === `${config.prefix}help utils`) {
       const embed = new RichEmbed()
-        .setTitle('Sounds')
+        .setTitle('Utilities')
         .setColor(0xFF0000)
         .setDescription('**%code** -- Source code \n**%ping** -- Pong');
       message.channel.send(embed);
