@@ -1,5 +1,4 @@
-  /* Sound Commands */
-  
+  /* Lainchan radio */
   client.on('message', msg => {
     if (msg.content === `${config.prefix}radio`) {
       const voiceChannel = msg.member.voiceChannel;
@@ -10,6 +9,7 @@
     }
   });
 
+  /* Leave the voice channel */
   client.on('message', msg => {
     if (msg.content === `${config.prefix}leave`) {
       const voiceChannel = msg.member.voiceChannel;
@@ -17,10 +17,9 @@
     }
   });
 
-  /* Youtube */
+  /* Powerlines */
   client.on('message', msg => {
     if (msg.content === `${config.prefix}powerlines`) {
-      const url = 'https://www.youtube.com/watch?v=_W1P7AvV17w';
       const voiceChannel = msg.member.voiceChannel;
       voiceChannel.join()
       if (!voiceChannel) {
@@ -28,8 +27,7 @@
       }
       voiceChannel.join()
         .then(connection => {
-          const stream = ytdl(url, { filter: 'audioonly' });
-          const dispatcher = connection.playStream(stream);
+          const dispatcher = connection.playFile('power.ogg');
           dispatcher.on('end', () => {
             voiceChannel.leave();
       })
@@ -37,12 +35,4 @@
   }
 });
 
-client.on('message', message => {
-  if (message.content === `${config.prefix}help sounds`) {
-    const embed = new RichEmbed()
-      .setTitle('Sounds')
-      .setColor(0xFF0000)
-      .setDescription('**%radio** -- Plays lainchan radio \n**%leave** -- Leaves voice channel\n**%powerlines** -- Plays 12 hours of powerlines \n**More things will be added along the way so stay tuned! 😅**');
-    message.channel.send(embed);
-  }
-});
+

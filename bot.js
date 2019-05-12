@@ -7,26 +7,18 @@ var fs = require("fs");
 
 /* Category-based "plugins" */
 eval(fs.readFileSync('plugin/sound.js')+'');
+eval(fs.readFileSync('plugin/help.js')+'');
 
-
+/* Start */
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
     client.user.setActivity('%help');
   });
   
+/* Basic commands that don't really need a seperate util.js file... Maybe in the future */
   client.on('message', msg => {
     if (msg.content === `${config.prefix}ping`) {
 		msg.channel.send('Pong.');
-    }
-  });
-
-  client.on('message', message => {
-    if (message.content === `${config.prefix}help`) {
-      const embed = new RichEmbed()
-        .setTitle('Help')
-        .setColor(0xFF0000)
-        .setDescription('**%help sounds** -- Sound commands\n **%code** -- Source code');
-      message.channel.send(embed);
     }
   });
 
@@ -35,9 +27,10 @@ client.on('ready', () => {
       const embed = new RichEmbed()
         .setTitle('Source Code')
         .setColor(0xFF0000)
-        .setDescription('You can find the source code here \n https://github.com/TheSorton/Arisubot');
+        .setDescription('You can find the source code here \nhttps://github.com/TheSorton/Arisubot');
       message.channel.send(embed);
     }
   });
 
+  /* Login */
   client.login(config.token);
