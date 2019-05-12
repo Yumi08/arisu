@@ -8,11 +8,12 @@ var fs = require("fs");
 /* Category-based "plugins" */
 eval(fs.readFileSync('plugin/sound.js')+'');
 eval(fs.readFileSync('plugin/help.js')+'');
+eval(fs.readFileSync('plugin/welcome.js')+'');
 
 /* Start */
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
-    client.user.setActivity('%help');
+    client.user.setActivity(`${config.prefix}help`);
   });
   
 /* Basic commands that don't really need a seperate util.js file... Maybe in the future */
@@ -31,6 +32,6 @@ client.on('ready', () => {
       message.channel.send(embed);
     }
   });
-
+  
   /* Login */
   client.login(config.token);
