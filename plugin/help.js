@@ -4,7 +4,7 @@ client.on('message', message => {
       const embed = new RichEmbed()
         .setTitle('Help')
         .setColor(0xFF0000)
-        .setDescription('**%help sounds** -- Sound commands\n **%code** -- Source code\n**More things will be added along the way so stay tuned!**');
+        .setDescription('**%help sounds** -- Sound commands\n **%help utils** -- Utilities\n**More things will be added along the way so stay tuned!**');
       message.channel.send(embed);
     }
   });
@@ -22,7 +22,7 @@ client.on('message', message => {
 
 /* Utility commands */
 client.on('message', message => {
-    if (message.content === `${config.prefix}help utility`) {
+    if (message.content === `${config.prefix}help utils`) {
       const embed = new RichEmbed()
         .setTitle('Sounds')
         .setColor(0xFF0000)
