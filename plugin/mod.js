@@ -6,11 +6,11 @@ client.on('message', message => {
       if (user) {
         const member = message.guild.member(user);
         if (member) {
-          member.kick('Optional reason that will display on my audit-logs.').then (() => {
+          member.kick('').then (() => {
           message.reply(`Successful! I kicked ${guild.displayName}`);          
 })
       } else {
-        message.reply('That user isn`t on/in the guild.');
+        message.replay('That user isn`t on/in the guild.');
       }
    }
 }
@@ -21,3 +21,20 @@ client.on('message', message => {
 });
 
 /* Ban Command */
+client.on('message', message => {
+  if (message.content.startsWith(`${config.prefix}ban`)) {
+      if(message.guild.roles.find(role => role.name === "overlords")) {
+        const user = message.mentions.users.first();
+        if (user) {
+          const member = message.guild.member(user);
+          if (member) {
+            member.ban('').then (() => {
+            message.reply(`Successful! I banned ${guild.displayName}`);
+            })
+          }}
+        } 
+        else {
+          message.reply('Nice try');
+      }
+    }
+  });
