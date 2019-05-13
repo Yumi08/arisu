@@ -30,3 +30,13 @@ client.on(`message`, message => {
       message.channel.send(embed);
     }
   });
+
+  client.on(`message`, message => {
+    if (message.content === `${config.prefix}help mod`) {
+      const embed = new RichEmbed()
+        .setTitle(`Moderation`)
+        .setColor(0xFF0000)
+        .setDescription(`**${config.prefix}kick** -- kicks a user`);
+      message.channel.send(embed);
+    }
+  });
