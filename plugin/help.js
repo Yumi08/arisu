@@ -36,7 +36,7 @@ client.on(`message`, message => {
       const embed = new RichEmbed()
         .setTitle(`Moderation`)
         .setColor(0xFF0000)
-        .setDescription(`**${config.prefix}kick** -- kicks a user\n**${config.prefix}ban** -- bans a user`);
+        .setDescription(`**${config.prefix}kick** -- kicks a user\n**${config.prefix}ban** -- bans a user\n**You must have the "overlords" role for these commands to do anything.**`);
       message.channel.send(embed);
     }
   });
