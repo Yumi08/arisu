@@ -1,12 +1,12 @@
 /* Kick Command */
 client.on('message', message => {
     if (message.content.startsWith(`${config.prefix}kick`)) {
-        if (message.guild.roles.get(`${config.modid}`)) {
+      if (message.member.roles.has(`${config.modid}`)) {
       const user = message.mentions.users.first();
-      if (user) {
-        const member = message.guild.member(user);
-        if (member) {
-          message.reply(`Successful! I kicked ${guild.displayName}`);
+         if (user) {
+           const member = message.guild.member(user);
+         if (member) {
+          message.reply(`Successful! I kicked **${member.displayName}**...`);
           member.kick('').then (() => {          
 })
       } else {
@@ -23,12 +23,12 @@ client.on('message', message => {
 /* Ban Command */
 client.on('message', message => {
   if (message.content.startsWith(`${config.prefix}ban`)) {
-    if (message.guild.roles.get(`${config.modid}`)) {
+    if (message.member.roles.has(`${config.modid}`)) {
         const user = message.mentions.users.first();
         if (user) {
           const member = message.guild.member(user);
           if (member) {
-            message.reply(`Banned!`);
+            message.reply(`Sucessful! I banned **${member.displayName}**...`);
             member.ban('').then (() => {
             })
           }}
