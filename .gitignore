@@ -3,3 +3,7 @@ config.json
 
 # It's 85MB. I'm not uploading that
 power.ogg
+
+# Housecleaning
+node_modules/
+package-lock.json

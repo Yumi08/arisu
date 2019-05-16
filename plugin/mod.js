@@ -6,8 +6,8 @@ client.on('message', message => {
       if (user) {
         const member = message.guild.member(user);
         if (member) {
-          member.kick('').then (() => {
-          message.reply(`Successful! I kicked ${guild.displayName}`);          
+          message.reply(`kicked!`);
+          member.kick('').then (() => {          
 })
       } else {
         message.replay('That user isn`t on/in the guild.');
@@ -28,8 +28,8 @@ client.on('message', message => {
         if (user) {
           const member = message.guild.member(user);
           if (member) {
+            message.reply(`banned!`);
             member.ban('').then (() => {
-            message.reply(`Successful! I banned ${guild.displayName}`);
             })
           }}
         } 

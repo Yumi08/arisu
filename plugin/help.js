@@ -4,7 +4,7 @@ client.on(`message`, message => {
       const embed = new RichEmbed()
         .setTitle(`Help`)
         .setColor(0xFF0000)
-        .setDescription(`**${config.prefix}help sounds** -- Sound commands\n **${config.prefix}help utils** -- Utilities\n**More things will be added along the way so stay tuned!**`);
+        .setDescription(`**${config.prefix}help sounds** -- Sound commands\n **${config.prefix}help utils** -- Utilities\n**${config.prefix}help mod** -- Moderation\n**More things will be added along the way so stay tuned!**`);
       message.channel.send(embed);
     }
   });
@@ -36,7 +36,7 @@ client.on(`message`, message => {
       const embed = new RichEmbed()
         .setTitle(`Moderation`)
         .setColor(0xFF0000)
-        .setDescription(`**${config.prefix}kick** -- kicks a user`);
+        .setDescription(`**${config.prefix}kick** -- kicks a user\n**${config.prefix}ban** -- bans a user`);
       message.channel.send(embed);
     }
   });
