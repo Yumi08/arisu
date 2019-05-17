@@ -3,5 +3,8 @@
     "version": "master",
     "description": "Arisubot",
     "readme": "README.md",
-    "license": "MIT"
+    "license": "MIT",
+    "dependencies": {
+        "discord.js": "^11.5.0"
+    }
 }
