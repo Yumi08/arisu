@@ -2,5 +2,6 @@
     "prefix": "prefix",
     "token": "token",
     "modid": "mod role id",
-    "welchan": "welcome channel id"  
+    "welchan": "welcome channel id",
+    "muteRole": "muted role id"  
 }
