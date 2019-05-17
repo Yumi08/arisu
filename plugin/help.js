@@ -19,7 +19,7 @@ client.on(`message`, message => {
           },
           {
             name: "Moderation",
-            value: "**kick** -- This kicks the requested user. \n**ban** -- This bans the requested user. \n**mute** -- This gives the requested user the muted role."
+            value: "**kick** -- This kicks the requested user. \n**ban** -- This bans the requested user. \n**mute** -- This gives the requested user the muted role.\n**Note you need the mod role to use these commands.**"
           }
         ],
       }
