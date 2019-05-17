@@ -16,23 +16,3 @@
       voiceChannel.leave()
     }
   });
-
-  /* Powerlines */
-  client.on('message', msg => {
-    if (msg.content === `${config.prefix}powerlines`) {
-      const voiceChannel = msg.member.voiceChannel;
-      voiceChannel.join()
-      if (!voiceChannel) {
-        return message.reply('Please be in a voice channel first!');
-      }
-      voiceChannel.join()
-        .then(connection => {
-          const dispatcher = connection.playFile('power.ogg');
-          dispatcher.on('end', () => {
-            voiceChannel.leave();
-      })
-    })
-  }
-});
-
-
