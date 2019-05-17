@@ -7,7 +7,7 @@ client.on(`message`, message => {
           name: client.user.username,
           icon_url: client.user.avatarURL
         },
-        title: "Help commands",
+        title: "Help",
         description: `Here are the various commands. The prefix is **${config.prefix}** for each of the commands`,
         fields: [{
             name: "Sounds",
