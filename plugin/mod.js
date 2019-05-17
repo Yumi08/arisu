@@ -1,18 +1,17 @@
+/* Mod commands */
+
 /* Kick Command */
 client.on('message', message => {
     if (message.content.startsWith(`${config.prefix}kick`)) {
-      if (message.member.roles.has(`${config.modid}`)) {
+      if (message.member.roles.has(`${config.modID}`)) {
       const user = message.mentions.users.first();
          if (user) {
            const member = message.guild.member(user);
          if (member) {
           message.reply(`Successful! I kicked **${member.displayName}**...`);
           member.kick('').then (() => {          
-})
-      } else {
-        message.replay('That user isn`t on/in the guild.');
-      }
-   }
+    })
+  }
 }
         else {
             message.reply('Nice try');
@@ -23,7 +22,7 @@ client.on('message', message => {
 /* Ban Command */
 client.on('message', message => {
   if (message.content.startsWith(`${config.prefix}ban`)) {
-    if (message.member.roles.has(`${config.modid}`)) {
+    if (message.member.roles.has(`${config.modID}`)) {
         const user = message.mentions.users.first();
         if (user) {
           const member = message.guild.member(user);
@@ -42,7 +41,7 @@ client.on('message', message => {
 /* Silence */
 client.on('message', message => {
     if (message.content.startsWith(`${config.prefix}mute`)) {
-      if (message.member.roles.has(`${config.modid}`)) {
+      if (message.member.roles.has(`${config.modID}`)) {
           const user = message.mentions.users.first();
           if (user) {
             const member = message.guild.member(user);
@@ -54,5 +53,5 @@ client.on('message', message => {
           else {
             message.reply('Nice try');
         }
-      }
-    });
+    }
+  });

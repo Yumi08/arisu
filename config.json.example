@@ -1,7 +1,8 @@
 {
     "prefix": "prefix",
     "token": "token",
-    "modid": "mod role id",
-    "welchan": "welcome channel id",
-    "muteRole": "muted role id"  
+    "modID": "mod role id",
+    "welChan": "welcome channel id",
+    "mutedRole": "muted role id"
+    "chanRules": "rules channel id"
 }

@@ -1,3 +1,5 @@
+  /* Sounds */
+  
   /* Lainchan radio */
   client.on('message', msg => {
     if (msg.content === `${config.prefix}radio`) {

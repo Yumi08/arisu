@@ -1,9 +1,11 @@
+/* Welcome */
+
 /* Join Message */
 client.on('guildMemberAdd', (guild, member) => {
-    client.channels.get(`${config.welchan}`).send(`Welcome, ` + `**<@${guild.id}>**! Make sure to read <#528842722899918859>.`);
+    client.channels.get(`${config.welChan}`).send(`Welcome, ` + `**<@${guild.id}>**! Make sure to read ${config.chanRules}.`);
 });
 
 /* Leave Message */
 client.on('guildMemberRemove', (guild, member) => {
-    client.channels.get(`${config.welchan}`).send(`Goodbye, ` + `**${guild.displayName}**...`);
+    client.channels.get(`${config.welChan}`).send(`Goodbye, ` + `**${guild.displayName}**...`);
 });
