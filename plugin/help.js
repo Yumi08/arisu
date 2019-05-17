@@ -14,6 +14,14 @@ client.on(`message`, message => {
             value: `**${config.prefix}radio** -- This plays lainchain radio. \n**${config.prefix}leave** -- This leaves the voice channel.`
           },
           {
+            name: "Fun",
+            value: `**${config.prefix}mines** -- Starts a game of minesweeper.`
+          },
+          {
+            name: "Image",
+            value: `**${config.prefix}cat** -- Returns a random cat image.`
+          },
+          {
             name: "Utilities",
             value: `**${config.prefix}ping** -- Pings the bot and returns a Pong. \n**${config.prefix}code** -- This links the source code to the bot.`
           },
@@ -21,6 +29,7 @@ client.on(`message`, message => {
             name: "Moderation",
             value: `**${config.prefix}kick** -- This kicks the requested user. \n**${config.prefix}ban** -- This bans the requested user. \n**${config.prefix}mute** -- This gives the requested user the muted role.\n**Note you need the mod role to use these commands.**`
           }
+
         ],
       }
     });
