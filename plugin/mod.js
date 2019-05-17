@@ -17,6 +17,7 @@ client.on('message', message => {
             message.reply('Nice try');
         }
 }
+}
 });
 
 /* Ban Command */

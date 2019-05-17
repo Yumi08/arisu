@@ -3,6 +3,6 @@
     "token": "token",
     "modID": "mod role id",
     "welChan": "welcome channel id",
-    "mutedRole": "muted role id"
+    "mutedRole": "muted role id",
     "chanRules": "rules channel id"
 }

@@ -16,7 +16,7 @@ eval(fs.readFileSync('plugin/util.js')+'');
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
     client.user.setActivity(`${config.prefix}help`);
-  })
+  });
 
   /* Login */
   client.login(config.token);
