@@ -1,9 +1,9 @@
 /* Utils */
 
-client.on('message', msg => {
-    if (msg.content === `${config.prefix}ping`) {
-		msg.channel.send('Pong.');
-    }
+client.on('message', message => {
+    if (message.content === `${config.prefix}ping`) {
+      message.channel.send(new Date().getTime() - message.createdTimestamp + " ms");  
+     }
   });
 
   client.on('message', message => {
