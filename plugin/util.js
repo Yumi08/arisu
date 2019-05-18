@@ -15,3 +15,15 @@ client.on('message', message => {
       message.channel.send(embed);
     }
   });
+
+  /* hi */
+  
+  client.on("message", message => {
+  if (message.content === 'hi') {
+    if (message.author.id !== '146873762367668225') return; {
+        message.channel.send('hi')
+   }
+  }
+  else { return;
+  }
+});
