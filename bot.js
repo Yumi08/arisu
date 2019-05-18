@@ -11,8 +11,9 @@ eval(fs.readFileSync('plugin/help.js')+'');
 eval(fs.readFileSync('plugin/welcome.js')+'');
 eval(fs.readFileSync('plugin/mod.js')+'');
 eval(fs.readFileSync('plugin/util.js')+'');
-eval(fs.readFileSync('plugin/fun.js')+'');
-eval(fs.readFileSync('plugin/tay.js')+'');
+eval(fs.readFileSync('plugin/img.js')+'');
+eval(fs.readFileSync('plugin/mines.js')+'');
+
 
 
 /* Start */
