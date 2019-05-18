@@ -18,7 +18,7 @@ eval(fs.readFileSync('plugin/tay.js')+'');
 /* Start */
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
-    client.user.setActivity(`${config.prefix}help`);
+    client.user.setPresence({ game: { name: `${config.prefix}help` }, status: 'dnd' })
   });
 
   /* Login */
