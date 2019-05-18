@@ -15,7 +15,7 @@ client.on(`message`, message => {
           },
           {
             name: "Minesweeper",
-            value: `**${config.prefix}mines easy** -- 10x10 grid, 10 mines\n**${config.prefix}mines medium** -- 10x10 grid, 25 mines\n**${config.prefix}mines hard** -- 10x20 grid, 40 mines\n **${config.prefix}mines insane** -- 12x12 grid, 71 mines`
+            value: `**${config.prefix}mines easy** -- 10x10 grid, 10 mines\n**${config.prefix}mines medium** -- 10x10 grid, 25 mines\n**${config.prefix}mines hard** -- 10x10 grid, 40 mines\n **${config.prefix}mines insane** -- 12x12 grid, 71 mines`
           },
           {
             name: "Image",
