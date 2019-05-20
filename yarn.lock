@@ -51,10 +51,10 @@ delayed-stream@~1.0.0:
   resolved "https://registry.yarnpkg.com/delayed-stream/-/delayed-stream-1.0.0.tgz#df3ae199acadfb7d440aaae0b29e2272b24ec619"
   integrity sha1-3zrhmayt+31ECqrgsp4icrJOxhk=
 
-discord.js-minesweeper@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/discord.js-minesweeper/-/discord.js-minesweeper-1.0.3.tgz#ec193f449e8c91037f397a5fd55ddd82dbfb5ea8"
-  integrity sha512-HAV8eLZTMtgm8xBPNm8F4CVEcIPpPm6W/a9Yv6oRNDqkKQZIu6yVaXPfszY+N/sajjsIpgqVgockp4pvsKcZeA==
+discord.js-minesweeper@1.0.4-b:
+  version "1.0.4-b"
+  resolved "https://registry.yarnpkg.com/discord.js-minesweeper/-/discord.js-minesweeper-1.0.4-b.tgz#9c4b976ff1cbffde99a69e07af1befe3b456cec2"
+  integrity sha512-D2G8O/M66JO+duu7MWac5vx6311fg3MQxjuvPHV2wnijzDJOHA9OBT+DkNsOpgvy+7Qo7F9XGeXxFIpbkpT98Q==
 
 discord.js@^11.5.0:
   version "11.5.0"

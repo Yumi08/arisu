@@ -7,7 +7,7 @@
     "dependencies": {
         "@discordjs/uws": "^10.149.0",
         "discord.js": "^11.5.0",
-        "discord.js-minesweeper": "^1.0.3",
+        "discord.js-minesweeper": "1.0.4-b",
         "random-cat": "^1.0.1",
         "random.cat.js": "^1.0.4",
         "sodium": "^3.0.2"
