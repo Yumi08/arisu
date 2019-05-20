@@ -18,6 +18,7 @@ client.on('message', message => {
         mines: 10,
         emote: 'tada',
         returnType: 'emoji',
+        revealFirstCell: true
       });
       var mines = minesweeper.start();
       const embed = new RichEmbed()
@@ -41,6 +42,7 @@ client.on('message', message => {
             mines: 25,
             emote: 'tada',
             returnType: 'emoji',
+            revealFirstCell: true
           });
         var mines = minesweeper.start();
         const embed = new RichEmbed()
@@ -64,6 +66,7 @@ client.on('message', message => {
             mines: 40,
             emote: 'tada',
             returnType: 'emoji',
+            revealFirstCell: true
           });
         var mines = minesweeper.start();
         const embed = new RichEmbed()
@@ -87,6 +90,7 @@ client.on('message', message => {
         mines: 71,
         emote: 'tada',
         returnType: 'emoji',
+        revealFirstCell: true
       });
       var mines = minesweeper.start();
       const embed = new RichEmbed()
