@@ -19,7 +19,7 @@ client.on(`message`, message => {
           },
           {
             name: "Image",
-            value: `**${config.prefix}cat** -- Get a random kot.\n**${config.prefix}pup** -- Get a random pupper.\n **${config.prefix}**pape [search term]** -- Searches wallhaven.cc and returns the first result.`
+            value: `**${config.prefix}cat** -- Get a random kot.\n**${config.prefix}pup** -- Get a random pupper.\n **${config.prefix}pape [search term]** -- Searches wallhaven.cc and returns the first result.`
           },
           {
             name: "Utilities",
