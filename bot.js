@@ -19,7 +19,7 @@ eval(fs.readFileSync('plugin/mines.js')+'');
 /* Start */
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
-    client.user.setActivity(`${config.prefix}help`, 'https://www.twitch.tv/')
+    client.user.setPresence({ game: { name: `${config.prefix}help` }, status: 'dnd' })
   });
 
   /* Login */

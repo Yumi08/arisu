@@ -20,14 +20,3 @@ client.on('message', message => {
       }
   })
 }});
-
-client.on('message', message => {
-  if (message.content === `${config.prefix}pup`) {
-    const randomPuppy = require('random-puppy');
-    randomPuppy()
-        .then(url => {
-            message.channel.send(url);
-    })
-  }
-});
-

@@ -2,7 +2,7 @@
 client.on(`message`, message => {
     if (message.content === `${config.prefix}help`) {
         message.channel.send({embed: {
-        color: 0xbe132d,
+        color: 3066993,
         author: {
           name: client.user.username,
           icon_url: client.user.avatarURL
@@ -19,7 +19,7 @@ client.on(`message`, message => {
           },
           {
             name: "Image",
-            value: `**${config.prefix}cat** -- Get a random kot.\n**${config.prefix}pup** -- Get a random pupper.`
+            value: `**${config.prefix}cat** -- Returns a random cat image.`
           },
           {
             name: "Utilities",
