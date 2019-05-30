@@ -48,11 +48,18 @@ client.on("message", async message => {
           message.channel.send(`dumbasses`)
         }
           else {
-            message.channel.send(json.path)
+            message.channel.send({embed: {
+            color: 0xbe132d,
+            title: "Wallpaper",
+            description: `[Source](${json.url})`,
+            image: {
+                url: json.path,
+              },
+          footer: {
+            icon_url: 'https://pbs.twimg.com/profile_images/653341480640217088/t1c1aTc9.png',
+            text: "This command is powered by wallhaven.cc"
           }
-
-      }
-    );
+        }});
+          console.log(json.path)
   }
-
-});
+})}});
