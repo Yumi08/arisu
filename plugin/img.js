@@ -45,7 +45,7 @@ client.on("message", async message => {
             message.channel.send(`No results found`);
         }
         else if ([0] == null) {
-          message.channe.send(`dumbasses`)
+          message.channel.send(`dumbasses`)
         }
           else {
             message.channel.send(json.path)
