@@ -42,15 +42,15 @@ client.on('message', message => {
 /* Silence */
 client.on('message', message => {
     if (message.content.startsWith(`${config.prefix}mute`)) {
-      if (message.member.roles.has(`${config.modID}`)) {
-          const user = message.mentions.users.first();
+      if (message.member.roles.has(`${config.modID2}`)) {
+	          const user = message.mentions.users.first();
           if (user) {
             const member = message.guild.member(user);
             if (member) {
               message.reply(`Sucessful! I muted **<@${member.id}>**.`);
               member.addRole(`${config.mutedRole}`);
             }}
-          } 
+            }
           else {
             message.reply('Nice try');
         }
