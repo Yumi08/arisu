@@ -31,3 +31,18 @@ client.on('message', message => {
   }
 });
 
+client.on("message", async message => {
+  if(message.author.bot) return;
+  if(message.content.indexOf(config.prefix) !== 0) return;
+  const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
+  const command = args.shift().toLowerCase();
+
+    if(command === "pape") {
+      const request = require('request')
+        request(`https://wallhaven.cc/api/v1/search?q=${args}&categories=111&purity=100&sorting=random`, { json: true }, (err, res, body) => {
+          const json = (body.data[0])
+            message.channel.send(json.path)
+      }
+    );
+  }
+});

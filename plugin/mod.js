@@ -9,7 +9,7 @@ client.on('message', message => {
            const member = message.guild.member(user);
          if (member) {
           message.reply(`Successful! I kicked **${member.displayName}**...`);
-          member.kick('').then (() => {          
+          member.kick('').then (() => {
     })
   }
 }
@@ -32,7 +32,7 @@ client.on('message', message => {
             member.ban('').then (() => {
             })
           }}
-        } 
+        }
         else {
           message.reply('Nice try');
       }
@@ -42,7 +42,7 @@ client.on('message', message => {
 /* Silence */
 client.on('message', message => {
     if (message.content.startsWith(`${config.prefix}mute`)) {
-      if (message.member.roles.has(`${config.modID2}`)) {
+      if (message.member.roles.has(`${config.modID}`)) {
 	          const user = message.mentions.users.first();
           if (user) {
             const member = message.guild.member(user);
