@@ -44,9 +44,13 @@ client.on("message", async message => {
           if (json == null){
             message.channel.send(`No results found`);
         }
+        else if ([0] == null) {
+          message.channe.send(`dumbasses`)
+        }
           else {
             message.channel.send(json.path)
           }
+
       }
     );
   }
