@@ -1,7 +1,7 @@
 {
     "name": "arisubot",
     "version": "master",
-    "description": "Arisubot",
+    "description": "A Discord bot written in node.js",
     "readme": "README.md",
     "license": "MIT",
     "dependencies": {
