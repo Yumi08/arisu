@@ -41,8 +41,14 @@ client.on("message", async message => {
       const request = require('request')
         request(`https://wallhaven.cc/api/v1/search?q=${args}&categories=111&purity=100&sorting=random`, { json: true }, (err, res, body) => {
           const json = (body.data[0])
+          if (json == null){
+            return;
+        }
+          else {
             message.channel.send(json.path)
+          }
       }
     );
   }
+
 });
