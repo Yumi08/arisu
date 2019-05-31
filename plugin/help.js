@@ -27,7 +27,7 @@ client.on(`message`, message => {
           },
           {
             name: "Moderation",
-            value: `**${config.prefix}kick** -- This kicks the requested user. \n**${config.prefix}ban** -- This bans the requested user. \n**${config.prefix}mute** -- This gives the requested user the muted role.\n**Note you need the mod role to use these commands.**`
+            value: `**${config.prefix}kick** -- This kicks the requested user. \n**${config.prefix}ban** -- This bans the requested user. \n**${config.prefix}mute** -- This gives the requested user the muted role.\n**${config.prefix}purge** -- Bulk deletes messages. Must be a number between 2 and 100.\n**Note you need the mod role to use these commands.**`
           }
 
         ],

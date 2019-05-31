@@ -34,7 +34,7 @@ client.on('message', message => {
           }}
         }
         else {
-          message.reply('Nice try');
+          message.channel.send('```ERR: You are a not a mod. This will be reported.```');
       }
     }
   });
@@ -52,7 +52,32 @@ client.on('message', message => {
             }}
             }
           else {
-            message.reply('Nice try');
+            message.channel.send('```ERR: You are a not a mod. This will be reported.```');
         }
     }
   });
+
+// Purge
+client.on("message", async message => {
+  if(message.author.bot) return;
+  if(message.content.indexOf(config.prefix) !== 0) return;
+
+  const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
+  const command = args.shift().toLowerCase();
+if(command === "purge") {
+  if (message.member.roles.has(`${config.modID}`)) {
+  const deleteCount = parseInt(args[0], 10);
+
+  if(!deleteCount || deleteCount < 2 || deleteCount > 100)
+    return message.reply("Please provide a number between 2 and 100...");
+
+  const fetched = await message.channel.fetchMessages({limit: deleteCount});
+  message.channel.bulkDelete(fetched)
+    .catch(error => message.reply(`Couldn't delete messages because of: ${error}`));
+    message.reply("Done.")
+}
+    else {
+        message.channel.send('```ERR: You are a not a mod. This will be reported.```');
+    }
+}
+});
