@@ -19,11 +19,11 @@ client.on(`message`, message => {
           },
           {
             name: "Image",
-            value: `**${config.prefix}cat** -- Get a random kot.\n**${config.prefix}pup** -- Get a random pupper.\n **${config.prefix}pape [search term]** -- Searches wallhaven.cc and returns the first result.`
+            value: `**${config.prefix}cat** -- Get a random kot.\n**${config.prefix}pup** -- Get a random pupper.\n **${config.prefix}pape [search term]** -- Searches wallhaven.cc and returns a random result.\nNo search term returns a random wallpaper.`
           },
           {
             name: "Utilities",
-            value: `**${config.prefix}ping** -- Pings the bot and returns a Pong. \n**${config.prefix}code** -- This links the source code to the bot.`
+            value: `**${config.prefix}ping** -- Pings the bot. \n**${config.prefix}code** -- This links the source code to the bot.`
           },
           {
             name: "Moderation",
