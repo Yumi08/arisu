@@ -2,8 +2,8 @@
 
 client.on('message', message => {
     if (message.content === `${config.prefix}ping`) {
-      message.channel.send(new Date().getTime() - message.createdTimestamp + " ms");
-     }
+      const m = await message.channel.send("Ping?");
+      m.edit(`Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API Latency: ${Math.round(client.ping)}ms`);     }
   });
 
   client.on('message', message => {
