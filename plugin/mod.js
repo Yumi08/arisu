@@ -1,6 +1,6 @@
-/* Mod commands */
+// Mod commands
 
-/* Kick Command */
+// Kick Command
 client.on('message', message => {
     if (message.content.startsWith(`${config.prefix}kick`)) {
       if (message.member.roles.has(`${config.modID}`)) {
@@ -20,7 +20,7 @@ client.on('message', message => {
 }
 });
 
-/* Ban Command */
+// Ban Command
 client.on('message', message => {
   if (message.content.startsWith(`${config.prefix}ban`)) {
     if (message.member.roles.has(`${config.modID}`)) {
@@ -39,7 +39,7 @@ client.on('message', message => {
     }
   });
 
-/* Silence */
+// Silence
 client.on('message', message => {
     if (message.content.startsWith(`${config.prefix}mute`)) {
       if (message.member.roles.has(`${config.modID}`)) {

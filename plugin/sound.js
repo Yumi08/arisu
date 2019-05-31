@@ -1,6 +1,6 @@
-  /* Sounds */
-  
-  /* Lainchan radio */
+  // Sounds
+
+  // Lainchan radio
   client.on('message', message => {
     if (message.content === `${config.prefix}radio`) {
       const voiceChannel = message.member.voiceChannel;
@@ -11,7 +11,7 @@
     }
   });
 
-  /* Leave the voice channel */
+  // Leave the voice channel
   client.on('message', message => {
     if (message.content === `${config.prefix}leave`) {
       const voiceChannel = message.member.voiceChannel;

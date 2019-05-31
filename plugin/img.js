@@ -1,4 +1,4 @@
-/* Images */
+// Images
 
   client.on('message', message => {
       if (message.content === `${config.prefix}cat`) {

@@ -5,7 +5,7 @@ const {RichEmbed } = require('discord.js');
 const Minesweeper = require('discord.js-minesweeper');
 var fs = require("fs");
 
-/* Category-based "plugins" */
+// Category-based "plugins"
 eval(fs.readFileSync('plugin/sound.js')+'');
 eval(fs.readFileSync('plugin/help.js')+'');
 eval(fs.readFileSync('plugin/welcome.js')+'');
@@ -16,11 +16,11 @@ eval(fs.readFileSync('plugin/mines.js')+'');
 
 
 
-/* Start */
+// Start
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
     client.user.setActivity(`${config.prefix}help`)
   });
 
-/* Login */
+// Login
 client.login(config.token);

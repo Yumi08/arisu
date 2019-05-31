@@ -1,4 +1,4 @@
-/* Help */
+// Help
 client.on(`message`, message => {
     if (message.content === `${config.prefix}help`) {
         message.channel.send({embed: {

@@ -1,4 +1,4 @@
-/* Utils */
+// Utils
 
 client.on('message', message => {
     if (message.content === `${config.prefix}ping`) {
@@ -12,7 +12,7 @@ client.on('message', message => {
     }
   });
 
-  /* hi */
+  // hi
 
   client.on("message", message => {
   if (message.content === 'hi') {
