@@ -23,7 +23,7 @@ client.on(`message`, message => {
           },
           {
             name: "Utilities",
-            value: `**${config.prefix}ping** -- Pings the bot. \n**${config.prefix}code** -- This links the source code to the bot.`
+            value: `**${config.prefix}ping** -- Pings the bot. \n**${config.prefix}code** -- This links the source code to the bot.\n **${config.prefix}say** -- Says what you want`
           },
           {
             name: "Moderation",
