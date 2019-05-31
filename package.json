@@ -5,13 +5,14 @@
     "readme": "README.md",
     "license": "MIT",
     "dependencies": {
-    	"bufferutil": "^4.0.1",
-      "discord.js": "^11.5.1",
-      "discord.js-minesweeper": "1.0.4-b",
-      "random-cat": "^1.0.1",
-      "random-puppy": "^1.1.0",
-      "random.cat.js": "^1.0.4",
-      "request": "^2.88.0",
-      "sodium": "^3.0.2",
+        "bufferutil": "^4.0.1",
+        "discord.js": "^11.5.1",
+        "discord.js-minesweeper": "1.0.4-b",
+        "opusscript": "^0.0.6",
+        "random-cat": "^1.0.1",
+        "random-puppy": "^1.1.0",
+        "random.cat.js": "^1.0.4",
+        "request": "^2.88.0",
+        "sodium": "^3.0.2"
     }
 }
