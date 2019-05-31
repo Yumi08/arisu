@@ -22,5 +22,5 @@ client.on('ready', () => {
     client.user.setActivity(`${config.prefix}help`)
   });
 
-  /* Login */
-  client.login(config.token);
+/* Login */
+client.login(config.token);
