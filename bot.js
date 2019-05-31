@@ -3,7 +3,7 @@ const client = new Discord.Client();
 const config = require('./config.json');
 const {RichEmbed } = require('discord.js');
 const Minesweeper = require('discord.js-minesweeper');
-var fs = require("fs");
+const fs = require("fs");
 
 // Category-based "plugins"
 eval(fs.readFileSync('plugin/sound.js')+'');
