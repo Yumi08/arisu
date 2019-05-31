@@ -12,18 +12,6 @@ client.on('message', message => {
     }
   });
 
-  // hi
-
-  client.on("message", message => {
-  if (message.content === 'hi') {
-    if (message.author.id !== '146873762367668225') return; {
-        message.channel.send('hi')
-   }
-  }
-  else { return;
-  }
-});
-
 client.on("message", async message => {
   if(message.author.bot) return;
   if(message.content.indexOf(config.prefix) !== 0) return;
