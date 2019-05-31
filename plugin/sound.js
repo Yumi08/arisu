@@ -6,7 +6,7 @@
       const voiceChannel = message.member.voiceChannel;
       voiceChannel.join()
       .then(connection => {
-        return connection.playStream(('http://lainon.life:8000/cyberia.ogg'), {bitrate: 192000 /* 192kbps */});
+        return connection.playStream(('http://lainon.life:8000/cyberia.ogg'), {bitrate: 64000 /* 64kbps */});
        })
     }
   });
