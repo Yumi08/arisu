@@ -5,8 +5,8 @@
     "readme": "README.md",
     "license": "MIT",
     "dependencies": {
-        "@discordjs/uws": "^10.149.0",
-        "discord.js": "^11.5.0",
+    	"bufferutil": "^4.0.1",
+        "discord.js": "^11.5.1",
         "discord.js-commando": "^0.10.0",
         "discord.js-minesweeper": "1.0.4-b",
         "random-cat": "^1.0.1",
