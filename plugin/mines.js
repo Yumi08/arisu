@@ -1,4 +1,4 @@
-client.on('message', message => {
+client.on('message', async message => {
     if (message.content === `${config.prefix}mines`) {
         if (message.channel.id === `${config.botChan}`) {
             message.reply(`Use **${config.prefix}help** to see the difficulties.`)
@@ -9,7 +9,7 @@ client.on('message', message => {
     }
 });
 
-client.on('message', message => {
+client.on('message', async message => {
     if (message.content === `${config.prefix}mines easy`) {
       if (message.channel.id === `${config.botChan}`) {
       const minesweeper = new Minesweeper({
@@ -27,13 +27,13 @@ client.on('message', message => {
       .setDescription(mines);
       message.channel.send(embed);
   }
-      
+
       else {
         message.reply(`Use <#${config.botChan}>.`)
       }
     }});
 
-client.on('message', message => {
+client.on('message', async message => {
     if (message.content === `${config.prefix}mines medium`) {
         if (message.channel.id === `${config.botChan}`) {
         const minesweeper = new Minesweeper({
@@ -51,13 +51,13 @@ client.on('message', message => {
           .setDescription(mines);
         message.channel.send(embed);
       }
-          
+
     else {
         message.reply(`Use <#${config.botChan}>.`)
         }
 }});
 
-client.on('message', message => {
+client.on('message', async message => {
     if (message.content === `${config.prefix}mines hard`) {
         if (message.channel.id === `${config.botChan}`) {
         const minesweeper = new Minesweeper({
@@ -75,13 +75,13 @@ client.on('message', message => {
           .setDescription(mines);
         message.channel.send(embed);
       }
-          
+
     else {
         message.reply(`Use <#${config.botChan}>.`)
         }
 }});
 
-client.on('message', message => {
+client.on('message', async message => {
     if (message.content === `${config.prefix}mines insane`) {
       if (message.channel.id === `${config.botChan}`) {
       const minesweeper = new Minesweeper({
@@ -99,7 +99,7 @@ client.on('message', message => {
       .setDescription(mines);
       message.channel.send(embed);
   }
-      
+
       else {
         message.reply(`Use <#${config.botChan}>.`)
       }

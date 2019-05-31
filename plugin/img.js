@@ -1,13 +1,13 @@
 // Images
 
-  client.on('message', message => {
+  client.on('message', async message => {
       if (message.content === `${config.prefix}cat`) {
         const randomCat = require('random.cat.js');
         const randomCatApi = randomCat.api();
         randomCatApi.getCat().then((cat) => message.channel.send(cat.file))
 }});
 
-client.on('message', message => {
+client.on('message', async message => {
   if (message.content === `${config.prefix}pup`) {
     const randomPuppy = require('random-puppy');
     randomPuppy()

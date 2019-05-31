@@ -1,7 +1,7 @@
 // Mod commands
 
 // Kick Command
-client.on('message', message => {
+client.on('message', async message => {
     if (message.content.startsWith(`${config.prefix}kick`)) {
       if (message.member.roles.has(`${config.modID}`)) {
       const user = message.mentions.users.first();
@@ -21,7 +21,7 @@ client.on('message', message => {
 });
 
 // Ban Command
-client.on('message', message => {
+client.on('message', async message => {
   if (message.content.startsWith(`${config.prefix}ban`)) {
     if (message.member.roles.has(`${config.modID}`)) {
         const user = message.mentions.users.first();
@@ -40,7 +40,7 @@ client.on('message', message => {
   });
 
 // Silence
-client.on('message', message => {
+client.on('message', async message => {
     if (message.content.startsWith(`${config.prefix}mute`)) {
       if (message.member.roles.has(`${config.modID}`)) {
 	          const user = message.mentions.users.first();

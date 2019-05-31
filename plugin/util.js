@@ -1,11 +1,11 @@
 // Utils
 
-client.on('message', message => {
+client.on('message', async message => {
     if (message.content === `${config.prefix}ping`) {
     message.channel.send(`Latency is ${message.createdTimestamp - message.createdTimestamp}ms.\nAPI Latency is ${Math.round(client.ping)}ms.`);     }
   });
 
-  client.on('message', message => {
+  client.on('message', async message => {
     if (message.content === `${config.prefix}code`) {
       message.channel.send("https://github.com/TheSorton/Arisubot");
     }

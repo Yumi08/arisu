@@ -1,5 +1,5 @@
 // Help
-client.on(`message`, message => {
+client.on(`message`, async message => {
     if (message.content === `${config.prefix}help`) {
         message.channel.send({embed: {
         color: 0xbe132d,
