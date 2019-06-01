@@ -26,12 +26,17 @@ client.on("message", async message => {
   const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
   if(command === "avatar") {
-    const user = message.mentions.users.first() || message.author;
+    if (message.content === `${config.prefix}avatar <@530107695630647296>`) {
+      message.channel.send("Please use `lain avatar`")
+}
+      else {
+       const user = message.mentions.users.first() || message.author;
        const avatarEmbed = new Discord.RichEmbed()
            .setColor(0xbe132d)
            .setAuthor(`Avatar of ${user.username}`)
            .setImage(user.avatarURL);
        message.channel.send(avatarEmbed);
+     }
    }
   }
 );
