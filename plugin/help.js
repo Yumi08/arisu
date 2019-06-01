@@ -1,7 +1,7 @@
 // Help
 client.on(`message`, async message => {
     if (message.content === `${config.prefix}help`) {
-        message.channel.send({embed: {
+        message.author.send({embed: {
         color: 0xbe132d,
         author: {
           name: client.user.username,
