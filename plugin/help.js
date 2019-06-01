@@ -33,5 +33,6 @@ client.on(`message`, async message => {
         ],
       }
     });
+    message.reply("I DM'd it to you. If you didn't receive it, make sure you allow DMs.")
     }
   });
