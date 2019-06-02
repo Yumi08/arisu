@@ -22,7 +22,6 @@ client.on("message", async message => {
   if(message.content.indexOf(config.prefix) !== 0) return;
   const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
-
     if(command === "pape") {
       const request = require('request')
         request(`https://wallhaven.cc/api/v1/search?q=${args}&categories=111&purity=100&sorting=random`, { json: true }, (err, res, body) => {
@@ -33,7 +32,7 @@ client.on("message", async message => {
         else if ([0] == null) {
           message.channel.send(`dumbasses`)
         }
-          else {
+          else if (message.channel.id === `${config.botChan}`) {
             message.channel.send({embed: {
             color: 0xbe132d,
             title: "Wallpaper",
@@ -44,8 +43,10 @@ client.on("message", async message => {
           footer: {
             icon_url: 'https://pbs.twimg.com/profile_images/653341480640217088/t1c1aTc9.png',
             text: "This command is powered by wallhaven.cc"
-          }
-        }});
+          }}})}
+
+      else {
+        message.channel.send(`Keep it in <#${config.botChan}>, and stop trying to flood whatever channel this is.`)
+      }
           console.log(json.path)
-  }
 })}});
