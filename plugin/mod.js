@@ -1,6 +1,6 @@
 // Mod commands
 const addModCommand = (name, body) => {
-  return addCommand(name, obj => {
+  return addCommand(name, async obj => {
     const message = obj.message;
     if (message.member.roles.has(`${config.modID}`)) {
       body(obj);
@@ -8,7 +8,7 @@ const addModCommand = (name, body) => {
   });
 };
 
-addModCommand("kick", ({ message }) => {
+addModCommand("kick", async ({ message }) => {
   const user = message.mentions.users.first();
   if (user) {
     const member = message.guild.member(user);
@@ -19,7 +19,7 @@ addModCommand("kick", ({ message }) => {
   }
 });
 
-addModCommand("ban", ({ message }) => {
+addModCommand("ban", async ({ message }) => {
   const mustSpecify = "```ERR: You must specify someone.```";
   const notBannable = "```ERR: This user cannot be banned by me.```";
   const couldntBan  = `Sorry ${message.author} I couldn't ban because of :`;
@@ -38,7 +38,7 @@ addModCommand("ban", ({ message }) => {
   message.reply(`**${member.user.tag}** has been banned.`);
 });
 
-addModCommand("mute", ({ message }) => {
+addModCommand("mute", async ({ message }) => {
   const user = message.mentions.users.first();
   if (user) {
     const member = message.guild.member(user);
@@ -49,7 +49,7 @@ addModCommand("mute", ({ message }) => {
   }
 });
 
-addModCommand("purge", ({ message, args }) => {
+addModCommand("purge", async ({ message, args }) => {
   const deleteCount = parseInt(args[0], 10);
   if (!deleteCount || deleteCount < 2 || deleteCount > 100)
     return message.reply("Please provide a number between 2 and 100...");
