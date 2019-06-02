@@ -18,7 +18,7 @@ eval(fs.readFileSync('plugin/mines.js')+'');
 
 // Start
 client.on('ready', () => {
-    console.log(`Logged in as ${client.user.tag}...\nThat emitter warning is weird and is beyond me.`);
+    console.log(`Logged in as ${client.user.tag}...`);
     client.user.setActivity(`${config.prefix}help`)
   });
 
