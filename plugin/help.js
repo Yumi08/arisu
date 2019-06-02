@@ -14,10 +14,6 @@ client.on(`message`, async message => {
             value: `**${config.prefix}radio** -- This plays lainchain radio. \n**${config.prefix}leave** -- This leaves the voice channel.`
           },
           {
-            name: "Minesweeper",
-            value: `**${config.prefix}mines easy** -- 10x10 grid, 10 mines\n**${config.prefix}mines medium** -- 10x10 grid, 25 mines\n**${config.prefix}mines hard** -- 10x10 grid, 40 mines\n **${config.prefix}mines insane** -- 12x12 grid, 71 mines`
-          },
-          {
             name: "Image",
             value: `**${config.prefix}cat** -- Get a random kot.\n**${config.prefix}pup** -- Get a random pupper.\n **${config.prefix}pape [search term]** -- Searches wallhaven.cc and returns a random result.\nNo search term returns a random wallpaper.`
           },
