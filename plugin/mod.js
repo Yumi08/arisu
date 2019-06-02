@@ -58,7 +58,4 @@ if(command === "purge") {
   })}
 
 }
-else {
-    message.channel.send('```ERR: You are a not a mod. This will be reported.```');
-}
 });
