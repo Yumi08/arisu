@@ -1,33 +1,29 @@
-// Utils
-client.on("message", async message => {
-  if(message.author.bot) return;
-  if(message.content.indexOf(config.prefix) !== 0) return;
-  const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
-  const command = args.shift().toLowerCase();
+//Utils
+addCommand("ping", ({ message }) => {
+  const latency    = message.createdTimestamp - message.createdTimestamp;
+  const apilatency = Math.round(client.ping);
+  const msg = `Latency is ${latency}ms.\nAPI Latency is ${apilatency}ms.`;
+  return message.channel.send(msg);
+});
 
-if (command === "ping") {
-    message.channel.send(`Latency is ${message.createdTimestamp - message.createdTimestamp}ms.\nAPI Latency is ${Math.round(client.ping)}ms.`);
-};
+addCommand("code", ({ message }) => {
+  const url = "https://github.com/TheSorton/Arisubot";
+  return message.channel.send(url);
+});
 
-if (command === "code") {
-    message.channel.send("https://github.com/TheSorton/Arisubot");
-};
+addCommand("say", ({ message, args }) => {
+  return message.channel.send(args);
+});
 
-if (command === "say") {
-   message.channel.send(args)
-};
-
-if (command === "avatar") {
+addCommand("avatar", ({ message }) => {
   if (message.content === `${config.prefix}avatar <@530107695630647296>`) {
-    message.channel.send("Please use `lain avatar`")
-}
-else {
-  const user = message.mentions.users.first() || message.author;
-  const avatarEmbed = new Discord.RichEmbed()
-    .setColor(0xbe132d)
-    .setAuthor(`Avatar of ${user.username}`)
-    .setImage(user.avatarURL);
-  message.channel.send(avatarEmbed);
+    return message.channel.send("Please use `lain avatar`")
+  } else {
+    const user = message.mentions.users.first() || message.author;
+    const avatarEmbed = new Discord.RichEmbed()
+      .setColor(0xbe132d)
+      .setAuthor(`Avatar of ${user.username}`)
+      .setImage(user.avatarURL);
+    return message.channel.send(avatarEmbed);
   }
-};
 });
