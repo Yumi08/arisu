@@ -1,48 +1,45 @@
 // Images
-client.on("message", async message => {
-  if(message.author.bot) return;
-  if(message.content.indexOf(config.prefix) !== 0) return;
-  const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
-  const command = args.shift().toLowerCase();
+addCommand("cat", ({ message }) => {
+  const randomCat = require('random.cat.js');
+  const randomCatApi = randomCat.api();
+  randomCatApi.getCat().then((cat) => message.channel.send(cat.file))
+});
 
-if (command === "cat") {
-        const randomCat = require('random.cat.js');
-        const randomCatApi = randomCat.api();
-        randomCatApi.getCat().then((cat) => message.channel.send(cat.file))
-};
+addCommand("pup", ({ message }) => {
+  const randomPuppy = require('random-puppy');
+  randomPuppy().then(url => { message.channel.send(url)});
+});
 
-if (command === "pup") {
-    const randomPuppy = require('random-puppy');
-    randomPuppy()
-        .then(url => {
-        message.channel.send(url);
-})};
-
-
-if (command === "pape") {
-  const request = require('request')
-    request(`https://wallhaven.cc/api/v1/search?q=${args}&categories=111&purity=100&sorting=random`, { json: true }, (err, res, body) => {
-        const json = (body.data[0])
-        if (json == null) {
-            message.channel.send(`No results found`);
+addCommand("pape", ({ message, args }) => {
+  const request = require('request');
+  
+  const api     = "https://wallhaven.cc/api/v1/search";
+  const apiargs = `?q=${args}&categories=111&purity=100&sorting=random`;
+  
+  request(`${api}${apiargs}`, { json: true }, (err, res, body) => {
+    const json = (body.data[0]);
+    
+    if (json == null) return message.channel.send(`No results found`);
+    if ([0] == null)  return message.channel.send(`dumbasses`);
+    
+    if (message.channel.id === `${config.botChan}`) {
+      let url = "https://pbs.twimg.com/profile_images/653341480640217088/t1c1aTc9.png";
+      let embed = {
+        color: 0xbe132d,
+        title: "Wallpaper",
+        description: `[Source](${json.url})`,
+        image: {
+          url: json.path,
+        },
+        footer: {
+          icon_url: url,
+          text: "This command is powered by wallhaven.cc"
         }
-        else if ([0] == null) {
-          message.channel.send(`dumbasses`)
-        }
-        else if (message.channel.id === `${config.botChan}`) {
-          message.channel.send({embed: {
-            color: 0xbe132d,
-            title: "Wallpaper",
-            description: `[Source](${json.url})`,
-            image: {
-                url: json.path,
-              },
-            footer: {
-              icon_url: 'https://pbs.twimg.com/profile_images/653341480640217088/t1c1aTc9.png',
-              text: "This command is powered by wallhaven.cc"
-            }}})}
-
-      else {
-        message.channel.send(`Use <#${config.botChan}>.`)
-      }
-})}});
+      };
+      
+      return message.channel.send({ embed });
+    }
+    
+    return message.channel.send(`Use <#${config.botChan}>.`);
+  });
+});
