@@ -11,8 +11,10 @@ addCommand("code", ({ message }) => {
   return message.channel.send(url);
 });
 
-addCommand("say", ({ message, args }) => {
-  return message.channel.send(args);
+addCommand("say", ({ message, command, prefix }) => {
+  const initchar = prefix.length + command.length + 1;
+  const exactMessage = message.content.substring(initchar);
+  return message.channel.send(exactMessage);
 });
 
 addCommand("avatar", ({ message }) => {
