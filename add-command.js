@@ -1,8 +1,8 @@
 const Discord = require('discord.js');
 const config = require('./config.json');
 
-const getargs = message => {
-  return message.content.slice(config.prefix.length).trim().split(/ +/g)
+const removePrefix = (message) => {
+  return message.content.slice(config.prefix.length).trim();
 };
 
 const hashtableOfCommands = {};
@@ -32,11 +32,16 @@ const getCommandFromTable = (name) => {
 const onMessage = async message => {
   if (message.author.bot) return;
   if (message.content.indexOf(config.prefix) !== 0) return;
-  const args = getargs(message);
+  const args = removePrefix(message).split(/ +/g);
   const command = args.shift().toLowerCase();
   
   if (hashtableHasCommand(command)) {
-    return getCommandFromTable(command)({ message, command, args });
+    return getCommandFromTable(command)({
+      message,
+      command,
+      args,
+      prefix: config.prefix,
+    });
   }
   // command does not exist
 };
