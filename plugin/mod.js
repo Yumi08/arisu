@@ -19,7 +19,7 @@ addModCommand("kick", async ({ message }) => {
   }
 });
 
-addModCommand("ban", async ({ message }) => {
+addModCommand("ban", async ({ message, args}) => {
   const mustSpecify = "```ERR: You must specify someone.```";
   const notBannable = "```ERR: This user cannot be banned by me.```";
   const couldntBan  = `Sorry ${message.author} I couldn't ban because of :`;
