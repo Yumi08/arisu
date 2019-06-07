@@ -79,7 +79,7 @@ addModCommand("mute", async ({ message }) => {
         },
         title: `Member muted`
       }
-      
+
       client.channels.get(`${config.logChan}`).send({ embed });
       message.reply(`Sucessful! I muted **<@${member.id}>**.`);
       member.addRole(`${config.mutedRole}`);
@@ -111,8 +111,10 @@ addModCommand("purge", async ({ message, args }) => {
 });
 
 addModCommand("warn", async ({ message, args }) => {
-  const user = message.mentions.users.first();
-  const reason = args.slice(1).join(' ');
+  let user = message.mentions.users.first();
+  let reason = args.slice(1).join(' ');
+  if (!reason) reason = "No reason available.";
+
   
   let embed = {
         color: 0xd88500,
