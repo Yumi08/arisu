@@ -6,7 +6,7 @@ client.on('messageDelete', (msgDel) => {
           name: msgDel.author.tag,
           icon_url: msgDel.author.avatarURL
           },
-        title: "Message Deleted",
+        description: `**Message deleted in <#${msgDel.channel.id}>**`,
         fields: [
           {
           name: "Message",
@@ -31,7 +31,7 @@ client.on('messageUpdate', (oldMsg, newMsg) => {
       name: oldMsg.author.tag,
       icon_url: oldMsg.author.avatarURL
     },
-    title: "Message Edited",
+    description: `**Message edited in <#${oldMsg.channel.id}>**`,
     fields: [
     {
       name: "Old Message",
