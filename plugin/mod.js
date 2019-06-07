@@ -13,6 +13,17 @@ addModCommand("kick", async ({ message }) => {
   if (user) {
     const member = message.guild.member(user);
     if (member) {
+      
+      const embed = {
+        color: 0xbe132d,
+        author: {
+          name: user.tag,
+          icon_url: user.avatarURL
+        },
+        title: 'Member kicked'
+      }
+
+      client.channels.get(`${config.logChan}`).send({ embed })
       message.reply(`Successful! I kicked **${member.displayName}**...`);
       member.kick('').then (() => {})
     }
@@ -23,7 +34,8 @@ addModCommand("ban", async ({ message, args}) => {
   const mustSpecify = "```ERR: You must specify someone.```";
   const notBannable = "```ERR: This user cannot be banned by me.```";
   const couldntBan  = `Sorry ${message.author} I couldn't ban because of :`;
-  
+
+
   let member = message.mentions.members.first();
   if (!member)          return message.reply(mustSpecify);
   if (!member.bannable) return message.reply(notBannable);
@@ -34,8 +46,23 @@ addModCommand("ban", async ({ message, args}) => {
   await member.ban(reason).catch(error => {
     return message.reply(`${couldntBan} ${error}`);
   });
-  
+    
+  const embed = {
+    color: 0xbe132d,
+    author: {
+      name: member.user.tag,
+      icon_url: member.user.avatarURL
+  },
+  title: `Member banned`,
+  fields: [{
+    name: `Reason`,
+    value: `${reason}`
+  }],
+  }
+
   message.reply(`**${member.user.tag}** has been banned.`);
+  client.channels.get(`${config.logChan}`).send({ embed })
+
 });
 
 addModCommand("mute", async ({ message }) => {
@@ -43,6 +70,17 @@ addModCommand("mute", async ({ message }) => {
   if (user) {
     const member = message.guild.member(user);
     if (member) {
+
+      const embed = {
+        color: 0xd88500,
+        author: {
+          name: user.tag,
+          icon_url: user.avatarURL
+        },
+        title: `Member muted`
+      }
+      
+      client.channels.get(`${config.logChan}`).send({ embed });
       message.reply(`Sucessful! I muted **<@${member.id}>**.`);
       member.addRole(`${config.mutedRole}`);
     }
@@ -60,7 +98,35 @@ addModCommand("purge", async ({ message, args }) => {
   message.channel.bulkDelete(fetched).catch(error => {
     return message.reply(`Couldn't delete messages because of: ${error}`);
   });
-  message.reply('Done').then(msg => {
+
+  const embed = {
+        color: 0xbe132d,
+        title: `Bulk Delete`,
+        description: `Done`
+  };
+
+  message.channel.send({ embed }).then(msg => {
     msg.delete(1000);
   });
+});
+
+addModCommand("warn", async ({ message, args }) => {
+  const user = message.mentions.users.first();
+  const reason = args.slice(1).join(' ');
+  
+  let embed = {
+        color: 0xd88500,
+        author: {
+          name:user.tag,
+          icon_url: user.avatarURL
+        },
+        title: "User warned",
+        description: `Warned by ${message.author}`,
+        fields: [{
+          name: "Reason",
+          value: `${reason}`
+      }]};
+
+  message.reply(`User has been warned with the following reason: ${reason}.`)
+  client.channels.get(`${config.logChan}`).send({ embed });
 });

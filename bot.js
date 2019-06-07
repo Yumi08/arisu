@@ -15,6 +15,7 @@ eval(fs.readFileSync('plugin/mod.js')+'');
 eval(fs.readFileSync('plugin/util.js')+'');
 eval(fs.readFileSync('plugin/img.js')+'');
 eval(fs.readFileSync('plugin/mines.js')+'');
+eval(fs.readFileSync('plugin/log.js')+'');
 
 client.on("message", onMessage);
 
