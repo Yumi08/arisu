@@ -68,8 +68,9 @@ addCommand("color", async({ message, args }) => {
     message.reply(`added ${color}`)
     }
     else if (args[0] === `list`) {
-    let colors = 
-    message.reply(`the colors are: ${rolesColors}`)
+    var util = require('util');
+    var colors = util.format.apply(util,rolesColors);
+    message.reply(`the colors are: ${colors}`)
     }
     else {
         message.reply(`Select a color.`)
