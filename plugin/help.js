@@ -23,7 +23,7 @@ addCommand("help", ({ message }) => {
       },
       {
         name: "Colors",
-        value: `${config.prefix}list -- List roles.`
+        value: `**${config.prefix}color list** -- List roles.`
       },
       {
         name: "Moderation",
