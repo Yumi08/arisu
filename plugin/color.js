@@ -9,6 +9,7 @@ const rolesColors = [
     "ebony",
     "snowy",
     "rose",
+    "periwinkle"
 ];
   
 addCommand("color", async({ message, args }) => {
@@ -60,6 +61,10 @@ addCommand("color", async({ message, args }) => {
     }
     else if (args[0] === `rose`) {
     member.addRole(`572295216522985484`)
+    message.reply(`added ${color}`)
+    }
+    else if (args[0] === `periwinkle`) {
+    member.addRole(`592559181941309440`)
     message.reply(`added ${color}`)
     }
     else if (args[0] === `list`) {
