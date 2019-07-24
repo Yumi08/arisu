@@ -1,8 +1,7 @@
 //Utils
 addCommand("ping", ({ message }) => {
-  const latency    = message.createdTimestamp - message.createdTimestamp;
   const apilatency = Math.round(client.ping);
-  const msg = `Latency is ${latency}ms.\nAPI Latency is ${apilatency}ms.`;
+  const msg = `Latency is ${apilatency}ms.`;
   return message.channel.send(msg);
 });
 
@@ -14,6 +13,7 @@ addCommand("code", ({ message }) => {
 addCommand("say", ({ message, command, prefix }) => {
   const initchar = prefix.length + command.length + 1;
   const exactMessage = message.content.substring(initchar);
+  message.delete()
   return message.channel.send(exactMessage);
 });
 
@@ -28,4 +28,8 @@ addCommand("avatar", ({ message }) => {
       .setImage(user.avatarURL);
     return message.channel.send(avatarEmbed);
   }
+});
+
+addCommand("memcount", ({ message }) => {
+  message.channel.send(`This server has ${message.guild.memberCount} members.`);
 });
