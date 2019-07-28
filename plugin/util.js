@@ -6,7 +6,7 @@ addCommand("ping", ({ message }) => {
 });
 
 addCommand("code", ({ message }) => {
-  const url = "https://gitgud.io/thesorton/arisu";
+  const url = "https://github.com/TheSorton/arisu";
   return message.channel.send(url);
 });
 
