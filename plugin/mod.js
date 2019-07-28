@@ -110,7 +110,7 @@ addModCommand("purge", async ({ message, args }) => {
   });
 });
 
-addCommand("unmute", async({ message }) => {
+addModCommand("unmute", async({ message }) => {
   const user = message.mentions.users.first();
   const member = message.guild.member(user);
 
