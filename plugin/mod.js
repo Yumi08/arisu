@@ -110,25 +110,14 @@ addModCommand("purge", async ({ message, args }) => {
   });
 });
 
-addModCommand("warn", async ({ message, args }) => {
-  let user = message.mentions.users.first();
-  let reason = args.slice(1).join(' ');
-  if (!reason) reason = "No reason available.";
+addCommand("unmute", async({ message }) => {
+  const user = message.mentions.users.first();
+  const member = message.guild.member(user);
 
-  
-  let embed = {
-        color: 0xd88500,
-        author: {
-          name:user.tag,
-          icon_url: user.avatarURL
-        },
-        title: "User warned",
-        description: `Warned by ${message.author}`,
-        fields: [{
-          name: "Reason",
-          value: `${reason}`
-      }]};
-
-  message.reply(`User has been warned with the following reason: ${reason}.`)
-  client.channels.get(`${config.logChan}`).send({ embed });
+  if(member.roles.has(config.mutedRole)) {
+    message.guild.member(user).removeRole(config.mutedRole);
+    message.reply(`<@${member.id}> has been unmuted.`)
+  } else {
+    message.reply(`<@${member.id}> is not currently muted.`);
+  }
 });
