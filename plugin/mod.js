@@ -81,7 +81,7 @@ addModCommand("mute", async ({ message }) => {
       }
 
       client.channels.get(`${config.logChan}`).send({ embed });
-      message.reply(`Sucessful! I muted **<@${member.id}>**.`);
+      message.reply(`Sucessful! I muted <@${member.id}>.`);
       member.addRole(`${config.mutedRole}`);
     }
   }
