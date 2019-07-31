@@ -10,12 +10,12 @@ addCommand("code", ({ message }) => {
   return message.channel.send(url);
 });
 
-addCommand("say", ({ message, command, prefix }) => {
+/* addCommand("say", ({ message, command, prefix }) => {
   const initchar = prefix.length + command.length + 1;
   const exactMessage = message.content.substring(initchar);
   message.delete()
   return message.channel.send(exactMessage);
-});
+}); */  //People have no clue how to control themselves
 
 addCommand("avatar", ({ message }) => {
   if (message.content === `${config.prefix}avatar <@530107695630647296>`) {
