@@ -10,10 +10,6 @@ addCommand("help", ({ message }) => {
     description: "Here are the various commands.",
     fields: [
       {
-        name: "Sounds",
-        value: `**${config.prefix}radio** -- This plays lainchain radio. \n**${config.prefix}leave** -- This leaves the voice channel.`
-      },
-      {
         name: "Image",
         value: `**${config.prefix}cat** -- Get a random kot.\n**${config.prefix}pup** -- Get a random pupper.\n **${config.prefix}pape [search term]** -- Searches wallhaven.cc and returns a random result.\nNo search term returns a random wallpaper.`
       },

@@ -24,16 +24,16 @@ addModCommand("kick", async ({ message }) => {
       }
 
       client.channels.get(`${config.logChan}`).send({ embed })
-      message.reply(`Successful! I kicked **${member.displayName}**...`);
+      message.reply(`**${member.displayName}** has been banned...`);
       member.kick('').then (() => {})
     }
   }
 });
 
 addModCommand("ban", async ({ message, args}) => {
-  const mustSpecify = "```ERR: You must specify someone.```";
-  const notBannable = "```ERR: This user cannot be banned by me.```";
-  const couldntBan  = `Sorry ${message.author} I couldn't ban because of :`;
+  const mustSpecify = `Please specify someone.`;
+  const notBannable = `I am unable to ban them.`;
+  const couldntBan  = `Unable to ban for the following reason:`;
 
 
   let member = message.mentions.members.first();
@@ -41,7 +41,7 @@ addModCommand("ban", async ({ message, args}) => {
   if (!member.bannable) return message.reply(notBannable);
   
   let reason = args.slice(1).join(' ');
-  if (!reason) reason = "No reason available.";
+  if (!reason) reason = "Reason not given.";
   
   await member.ban(reason).catch(error => {
     return message.reply(`${couldntBan} ${error}`);
@@ -81,7 +81,7 @@ addModCommand("mute", async ({ message }) => {
       }
 
       client.channels.get(`${config.logChan}`).send({ embed });
-      message.reply(`Sucessful! I muted <@${member.id}>.`);
+      message.reply(`I muted <@${member.id}>.`);
       member.addRole(`${config.mutedRole}`);
     }
   }
@@ -96,7 +96,7 @@ addModCommand("purge", async ({ message, args }) => {
     = await message.channel.fetchMessages({ limit: deleteCount });
   
   message.channel.bulkDelete(fetched).catch(error => {
-    return message.reply(`Couldn't delete messages because of: ${error}`);
+    return message.reply(`I was unable to delete those messages because of: ${error}`);
   });
 
   const embed = {
